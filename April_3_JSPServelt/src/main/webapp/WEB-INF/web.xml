@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>JSPServletBegin</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>01_GetMethod</servlet-name>
+  	<servlet-class>chap02.GetMethod_01</servlet-class>   <!-- 요 클래스가 응답을 해준다. -->
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>01_GetMethod</servlet-name>
+  	<url-pattern>/01_getMethod.do</url-pattern>
+  	
+  </servlet-mapping>
+  <!--  === 중요 === (암기 부분)
+  
+		확장자가 .xml 또는 .java 인 파일에서 URL 경로를 나타낼 때 맨 앞에 / 가 오면 
+		그 앞에는 자동적으로 http://ip주소:포트번호/컨텍스트패스명 이 붙게 된다.	
+		
+		현재 /JSPServletBegin/01_getMethod.do 이므로
+		http://localhost:9090/JSPServletBegin/01_getMethod.do 이 된다. 	
+  -->
+  
+  
+  
+  
+   <servlet>
+  	<servlet-name>02_postMethod</servlet-name>
+  	<servlet-class>chap02.PostMethod_02</servlet-class>   <!-- 요 클래스가 응답을 해준다. -->
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>02_postMethod</servlet-name>
+  	<url-pattern>/02_postMethod.do</url-pattern>
+  	
+  </servlet-mapping>
+  
+  
+  
+   <servlet>
+  	<servlet-name>03_getPostMethod</servlet-name>
+  	<servlet-class>chap02.GetPostMethod_03</servlet-class>   <!-- 요 클래스가 응답을 해준다. -->
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>03_getPostMethod</servlet-name>
+  	<url-pattern>/03_getPostMethod.do</url-pattern>
+  	
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+  	<servlet-name>04_getPostMethod</servlet-name>
+  	<servlet-class>chap02.GetPostMethod_04</servlet-class>   <!-- 요 클래스가 응답을 해준다. -->
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>04_getPostMethod</servlet-name>
+  	<url-pattern>/04_getPostMethod.do</url-pattern>
+  	
+  </servlet-mapping>
+  
+</web-app>
