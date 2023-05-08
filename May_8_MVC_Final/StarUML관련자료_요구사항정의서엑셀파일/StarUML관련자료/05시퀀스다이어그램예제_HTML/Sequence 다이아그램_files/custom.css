@@ -1,0 +1,127 @@
+@charset "utf-8";
+
+@font-face {font-family: 'NanumGothic'; src: url('../font/NanumGothic.ttf') format('truetype');}
+@font-face {font-family: 'BMJua'; src: url('../font/BMJUA_ttf.ttf') format('truetype');}
+@font-face {font-family: 'NanumGothicBold'; src: url('../font/NanumGothicExtraBold.ttf') format('truetype');}
+
+
+/* 상단 */
+.jidum_top_container {border-bottom:1px solid #41acff; margin-bottom:15px;} 
+.jidum_top_container .jidum_top {width:800px; margin:0 auto;}
+.jidum_top_container .admin_top {width:210px; margin:0 auto;}
+.jidum_top_container .mainlogo-image {display:inline-block; margin: 0 15px 15px 0;}
+.jidum_top_container .search_wrap {display:inline-block; vertical-align:middle;}
+.jidum_top_container .search_wrap #front-search {width:400px; margin: 10px 0 0 0;}
+.navbar-inverse {margin-bottom: 10px;}
+
+.header_search_wrap {display: inline-block; vertical-align: middle; width: 434px; height: 37px; border: 3px solid #41acff; background-color: #fff; overflow: hidden; margin-top: -5px;}
+.header_search_wrap .input_text {outline: none; float: left; width: 385px; height: 34px; line-height: 37px; border: none; padding: 0 0 0 5px;}
+.header_search_wrap .btn_search {float: right; width: 43px; height: 37px; font-size: 0; color: transparent; background: url('../images/btn_search.png') no-repeat; border: 0px; margin-top: -2px;}
+
+/* 지덤 상세 */
+#jidum_view_container {width: 73%; font-family: 'NGBold'; border: 1px solid #41acff; border-width: 4px 0px 1px 0px; padding: 0px 1px 0px 0px; margin: 25px 0 0 15px;}
+.jidum_title {text-align:center; margin: 0; font-size: 300%; font-weight: bold;}
+.jidum_title_container {padding: 50px 0 40px 0; border-bottom: 1px solid #E6ECF2;}
+.jidum_def_container {padding: 20px 10px 40px 10px;}
+.jidum_cont_container {padding:0px 1px 40px 0px; border-bottom: 1px solid #E6ECF2; margin-bottom: 20px;}
+.jidum_reply_container {padding: 10px 10px 10px 10px; margin-bottom: 20px; margin-top: 10px; background: #F7FFFF;}
+
+#jidum_view {padding: 0 10px 0 10px;}
+.jidum-dt-label {width: 40px; float: left;}
+.jidum-dd-def {overflow: hidden; color: #666;}
+.jidum_relate_container{padding-bottom: 20px;}
+.jidum_relate_item {list-style:none;}
+.jidum_relate_list{padding-left:10px;}
+
+.lnb_wrap{font-family:'NGBold';border:1px solid #41acff;border-width:4px 1px 1px 1px;padding:0px 1px 0px 0px;margin-top:25px;}
+.lnb_title{margin:0px; padding:0px; text-align:center; font-weight:bold; height:47px;line-height:47px;font-size:16px;border-bottom:1px solid #e0e0e0;}
+.lnb_wrap .lnb_list{margin-bottom:2px;height:700px; overflow-y:scroll; padding-top:15px;}
+::-webkit-scrollbar {width: 8px; height: 8px; border: 3px solid #fff; }
+::-webkit-scrollbar-track {background: #efefef; -webkit-border-radius: 10px; border-radius:10px; -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.2)}
+::-webkit-scrollbar-thumb {height: 50px; width: 50px; background: rgba(121,137,163,.4); -webkit-border-radius: 8px; border-radius: 8px; -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.1)}
+
+.lnb_wrap .lnb_list .list_1depth {list-style-image:url('../images/1depth_arrow.png');}
+.lnb_wrap .lnb_list .list_2depth {margin:0px; padding:0 0 0 15px; list-style-image:url('../images/2depth_arrow.png');}
+.lnb_wrap .lnb_list .list_3depth {margin:0px; padding:0 0 0 15px; list-style: none;}
+.depth_hr {border: 0; border-top: 1px dotted #eee; margin: 5px 20% 5px 0;}
+.depth3_hr {border: 0; border-top: 1px dotted #eee; margin: 10px 20% 10px 0;}
+.list_2depth li b {color:#454D59;}
+.list_3depth li a {color:#413E35;}
+.list_3depth li a :hover {color:#000;}
+
+.lnb_wrap .lnb_item_btn{display:block;padding-left:21px;height:43px;line-height:43px;font-size:14px;color:#666;background:url('../images/content/bg_lnb_arrow.png') no-repeat 207px center #f7f9fa;border-top:1px solid #e4e5e7;}
+.lnb_wrap .lnb_item_btn.active,
+.lnb_wrap .lnb_item_btn:hover,
+.lnb_wrap .lnb_item_btn:focus{color:#000;background-color:#fff;}
+
+/* 메인 페이지 화면 */
+.carousel-caption {left: 0%; right: 0%; top: 20%;}
+.carousel-caption a {color: #FFFF6C; font-size: 25px;}
+#mainMenu-model1 {background: rgba(53, 53, 53, 0.7); margin-bottom: 7%;}
+.mainText {font-family: 'NanumGothicBold';}
+.main_subjectName {font-family: 'NanumGothic';}
+.main_subjectName:hover {text-decoration: inherit; color: #FFF612;}
+#disabled_jidum:hover {cursor:not-allowed; text-decoration: inherit;}
+
+/* 클릭 방지 커서 기능 */
+.disabled_jidum:hover {cursor:not-allowed; text-decoration: inherit;}
+
+/* 하단 */
+#footer_wrap {margin-top: 90px; height: 100px; font-family: 'NGNormal'; font-size: 14px; background: #3e3e3e;}
+.footer_inner {position: relative; margin: 0 0 0 10%; padding: 10px 0 0 140px; width: 1210px; color: #dedddd;}
+.footer_logo {position: absolute; top: 40px; left: 0; display: inline-block; width: 154px; height: 31px; font-size: 0; color: transparent; background: url('../images/footer_logo.png') no-repeat;}
+.footer_info_wrap {clear: both; margin: 20px 0 0 0;}
+.footer_info_list {overflow: hidden; list-style: none;}
+.footer_info_item {float: left; margin: 0 17px 5px 0;}
+
+
+
+/* 단어팝업창 */
+#word_popup_top {margin: 0 10px 0 10px;}
+.word_popup_init {display: inline-block; vertical-align: top; padding: 25px 0 0 30px; width: 300px;}
+.word_popup_init p {font-size: 16px; font-weight: bold; text-align: center; margin: 3px 0 3px 0;}
+.word_wrap .word_search_and_init ul {list-style:none; align-content: center;}
+.word_wrap .word_search_and_init ul li {float:left; border-left:1px solid #ddd; padding: 1px 5px 1px 5px; margin: 3px 0 5px 0; min-width: 33px; text-align: center; font-family: 'BMJua';}
+.word_wrap .word_search_and_init ul li.selected a{color:#fff; font-weight:700;}
+.word_wrap .word_search_and_init ul li.selected {background-color:#41acff; border-left: 0;}
+
+.word_wrap .word_search_and_init ul li.clear {clear:both; border-left: 0;}
+.word_wrap .word_search_and_init ul li a {color: #b2b2b2; font-weight:bold;}
+.word_wrap .word_search_and_init ul li a:hover {color: #000;}
+
+.word_wrap .word_search_and_init ul:after {clear:both; content:"."; display:block; height:0; line-height:0; visibility:hidden;}
+.word_index_ul {padding: 0;}
+
+.word_popup_search_wrap .btn_search {float: right; width: 43px; height: 37px; font-size: 0; color: transparent; background: url('../images/btn_search.png') no-repeat; border: 0px; margin-top: -2px;}
+.word_popup_search_wrap {display: inline-block; vertical-align: middle; width: 265px; height: 37px; border: 3px solid #41acff; background-color: #fff; overflow: hidden; margin: 0 0 0 30px; }
+.word_popup_search_wrap .input_text {outline: none; float: left; width: 215px; height: 34px; line-height: 37px; border: none; padding: 0 0 0 5px;}
+
+.word_wrap .content_wrap .content_list {width:300px; margin: 17px 0 0 -5px; padding-top: 17px; border-top: 2px solid #E6ECF2;}
+.word_wrap .content_wrap .content_list ul {list-style:none;}
+.word_wrap .content_wrap .content {float:left; width:660px; padding-left:10px;}
+.word_wrap .content_wrap .content:after {clear:both; content:"."; display:block; height:0; line-height:0; visibility:hidden;}
+.word_wrap .content_wrap .content h1 {margin-top:0px ;padding: 0 0 5px 10px; font-size:45px; border-bottom: 2px solid #E6ECF2;}
+.word_wrap .content_wrap .content .content_def {padding-top:0; padding-left:10px;}
+
+.word_popup_list {margin-bottom:3px;}
+.word_popup_list a {color:#454D59; font-size:16px; font-family: 'BMJua';}
+.word_popup_list a:hover {font-weight:bold; color:#413E35; text-decoration:inherit;}
+.word_popup_list.selected{background-color:#41acff; border-left: 0;}
+.word_popup_list.selected a{color:#fff; font-weight:700;}
+
+.popUp_content_wordName {font-family: 'BMJua';}
+.content_def {font-family: 'BMJua'; font-size: 20px;}
+
+/* 단 팝업 창 로고 */
+.word_popup_logo {display: inline-block; width: 650px; vertical-align: top; margin: 0 0 0 0; padding: 0 0 0 30px;}
+.word_popup_logo_image {margin: 14px 15px 30px 35px;}
+
+
+
+.trend-panel-body-list-group .trend-panel-body-list {margin-left: -20px; list-style-type: none; margin-right: 20px; margin-top: 25px;}
+
+.trend_lnb_wrap{font-family:'NGBold';border:1px solid #41acff;border-width:4px 1px 1px 1px;padding:0px 1px 0px 0px;margin-top:25px;}
+.trend_lnb_wrap .trend_lnb_list{margin-bottom:2px;height:550px;}
+/* #E6ECF2 */
+
+.trend_def_wrap{font-family:'NGBold';border:1px solid #E6ECF2;border-width:1px 1px 1px 1px;padding:0px 1px 0px 0px;margin-bottom:25px;}

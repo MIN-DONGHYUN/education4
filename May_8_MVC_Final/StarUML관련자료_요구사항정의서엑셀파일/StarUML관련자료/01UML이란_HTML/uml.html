@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>UML정리</title>
+<style type="text/css">
+	body{font-family: sans-serif; font-size: 15pt;}
+	div#container {width: 84%; margin: 0 auto; line-height: 150%;}
+	ul {list-style: disc;}
+	h2 {margin-top: 50px;}
+	span.subtitle{display: block; margin: 40px 0 20px 0; font-size: 19pt; font-weight: bolder;}
+    span.italic{font-style: italic; color: gray;}
+</style>
+</head>
+<body>
+<div id="container">
+<h1 style="text-align: center;">UML: 클래스 다이어그램과 소스코드 매핑</h1>
+<h2>1.&nbsp;UML</h2>
+<p>
+UML이란 Unified Modeling Language의 약자로 1997년 OMG(Object Management Group)에서 표준으로 채택한 통합모델링언어 이다. <br/>
+즉, 모델을 만드는 표준언어인 것이다. 모델이란 것은 어떤 것을 실제로 만들 때 이렇게 만들면 잘 작동할지 미리 검증해 보는 것이며 실제 물건을 만드는 비용보다 비용이 훨씬 적을 경우에 모델을 만들어 설계를 검사한다.
+<p>
+소프트웨어에서의 모델은 건축, 항공 등의 모델과는 좀 다른 면이 있다. 건물을 짓고, 항공기를 만드는 것과 설계를 그리고 만드는 것은 비용의 엄청난 차이가 있다. 하지만 UML 다이어그램을 그리며 모델을 만드는 일은 개발보다 비용이 적긴 하지만 훨씬 적게 드는 것이 아니며 때로는 오히려 개발보다 비용이 더 많이 들 수도 있다. 그래서 UML은 시험해 볼 구체적인 것이 있고, 그것을 코드로 시험해 보는 것보다 UML로 시험해 보는 쪽이 비용이 덜 들 때 주로 사용한다. 이러한 목적으로 UML을 사용하는 유형에는 다음 3가지 정도가 있다.
+<ul>
+	<li>다른 사람들과의 의사소통 또는 설계 논의</li>
+	<li>전체 시스템의 구조 및 클래스의 의존성 파악</li>
+	<li>유지보수를 위한 설계의 back-end 문서</li>
+</ul>
+
+<h2>2.&nbsp;클래스 다이어그램의 요소(Element)</h2>
+<span class="subtitle">- Class (클래스)</span>
+<p>
+클래스는 보통 3개의 compartment(구획)으로 나누어 클래스의이름, 속성, 기능을 표기한다. 속성과 기능은 옵션으로 생략이 가능하지만 클래스의 이름은 필수로 명시해야 한다.<br/>
+UML에서 attribute(속성), operation(기능)이라고 부르는 것들이 자바에서는 filed(필드), method(메소드)라 불린다
+<div style="width: 80%;" align="center">
+<img src="images/--3----.png" style="width: 100%;">
+<span class="italic">[그림 1]&nbsp;클래스</span>
+</div>
+<p>
+클래스의 세부사항은 필드와 메소드의 Access modifier(접근제한자), 필드명(메소드명), 데이터타입, parameter(매개변수), 리턴 타입 등을 나타낼 수 있다. 클래스의 세부사항들을 상세하게 적는 것이 유용할 때도 있지만, UML 다이어그램은 필드나 메소드를 모두 선언하는 곳이 아니기 때문에 다이어그램을 그리는 목적에 필요한 것만 사용하는 것이 좋다. 클래스를 표현할때는 보통 3개의 구획(compartment)을 사용 하지만, 미리 정의되거나 사용자 정의 된 모델 속성(비즈니스 룰, 책임, 처리 이벤트, 발생된 예외 등)을 나타내기 위한 추가 구획도 사용할 수 있다고 한다.
+<br/>
+<span class="subtitle">- Stereo Type (스테레오 타입)</span>
+<p>
+스테레오 타입이란 UML에서 제공하는 기본 요소 이외에 추가적인 확장요소를 나타낼때 사용하는 것으로 쌍 꺾쇠와 비슷하게 생긴 길러멧(guillemet, « ») 사이에 적는다. 이 길러멧이라는 기호는 쌍 꺾쇠와는 좀 다른 것으로 폰트 크기보다 작다. 종이나 화이트보드에 그릴 때는 상관없지만 공식적인 문서라면 이 기호를 구분해서 사용하는 것이 좋을 것 같다.
+<div style="width: 80%;" align="center">
+<img src="images/--4--------.png" style="width: 100%;">
+<span class="italic">[그림 2]&nbsp;스테레오 타입</span>
+</div>
+<p>
+위의 다이어그램은 인터페이스와 유틸리티 클래스를 표현하고 있으며 필드 와 메소드 밑의 밑줄은 static(정적)필드, static(정적)메소드를, {readOnly}는 final 키워드를 사용하는 상수를 의미합니다. 스테레오 타입으로 많이 사용되는 것은 «interface», «utility», «abstract», «enumeration» 등이 있다.
+<br/>
+<span class="subtitle">- Abstract Class / AbstractMethod (추상 클래스 / 추상 메소드)</span>
+<p>
+추상클래스란 1개 이상의 메소드가 구현체는 없고 명세만 존재하는 클래스를 말한다.
+<div style="width: 80%;" align="center">
+<img src="images/--5------.png" style="width: 100%;">
+<span class="italic">[그림 3]&nbsp;추상 클래스</span>
+</div>
+<p>
+추상 클래스의 이름과 추상 메소드는 italic체나, {abstract} 프로퍼티를 사용하여 표기한다. UML 툴에서는 italic체로 표기하는 것이 많지만 종이나 칠판에 그릴 때는 힘들게 italic체로 기울여서 적는 것 보다는 {abstract} 프로퍼티로 표기하는 것이 쉽고 명확할 것 같다. 또한 공식적인 것은 아니지만 스테레오타입을 사용하여 추상 클래스를 표기하기도 한다.
+
+<h2>4.&nbsp;클래스간의 관계</h2>
+<p>
+클래스 다이어그램의 주 목적은 클래스간의 관계를 한눈에 쉽게 보고 의존 관계를 파악하는 것에 있다. 그렇기 때문에 클래스 다이어그램에서 가장 중요한 것이 클래스간의 관계이다.
+<div style="width: 80%;" align="center">
+<img src="images/--6-----------.png" style="width: 100%;">
+<span class="italic">[그림 4]&nbsp;클래스 관계 종류</span>
+</div>
+<br/>
+<span class="subtitle">- Generalization (일반화)</span>
+<p>
+Generalization은 슈퍼(부모)클래스와 서브(자식)클래스간의 Inheritance(상속) 관계를 나타내는 것이다. 여기서 Generalization이란 서브(자식)클래스가 주체가 되어 서브(자식)클래스를 슈퍼(부모)클래스로 Generalize 하는 것을 말하는 것이고, 반대의 개념은 슈퍼(부모)클래스를 서브(자식)클래스로 Specialize(구체화)하는 것입니다. 상속은 슈퍼(부모)클래스의 필드 및 메소드를 사용하며 구체화 하여 필드 및 메소드를 추가 하거나 필요에 따라 메소드를 overriding(오버라이딩) 하여 재정의 한다. 또는 슈퍼(부모)클래스가 추상 클래스인 경우에는 인터페이스의 메소드 구현과 같이 추상 메소드를 반드시 오버라이딩 하여 구현하여야 한다.
+<div style="width: 80%;" align="center">
+<img src="images/--7-Generalization1.png" style="width: 100%;">
+<span class="italic">[그림 5]&nbsp;Generalization (일반화)</span>
+</div>
+<p>
+위와 같이 Generalization 의 표기법은 클래스 사이에 실선을 연결하고 슈퍼(부모)클래스 쪽에 비어 있는 삼각형으로 나타내고 자바에서는 extends 키워드를 사용하여 상속을 구현한다.
+<br/>
+<span class="subtitle">- Realization (실체화)</span>
+<p>
+Realization은 interface의 spec(명세,정의)만 있는 메소드를 오버라이딩 하여 실제 기능으로 구현 하는 것을 말한다.
+<div style="width: 80%;" align="center">
+<img src="images/--8-Realization.png" style="width: 100%;">
+<span class="italic">[그림 6]&nbsp;Realization (실체화)</span>
+</div>
+<p>
+Realization을 나타내는 표기법은 2가지가 있다. 첫 번째는 인터페이스를 클래스처럼 표기하고 스테레오 타입 «interface»를 추가한다. 그리고 인터페이스와 클래스 사이의 Realize 관계는 점선과 인터페이스 쪽의 비어있는 삼각형으로 연결한다. 두 번째는 인터페이스를 원으로 표기하고 인터페이스의 이름을 명시한다. 그리고 인터페이스와 클래스 사이의 관계는 실선으로 연결한다. 
+자바에서는 위와 같이 implements 키워드를 사용하여 인터페이스를 구현한다.
+<br/>
+<span class="subtitle">- Dependency (의존)</span>
+<p>
+Dependency는 클래스 다이어그램에서 일반적으로 <mark>제일 많이 사용되는 관계</mark>로서, 어떤 클래스가 다른 클래스를 참조하는 것을 말한다.
+<div style="width: 80%;" align="center">
+<img src="images/--9-Dependency.png" style="width: 100%;">
+<span class="italic">[그림 7]&nbsp;Dependency (의존)</span>
+</div>
+<p>
+위의 그림은 자바에서 참조하는 형태에 대해 코드를 보여주고 있다. 참조의 형태는 <mark>메소드 내에서</mark> 대상 클래스의 객체 생성, 객체 사용, 메소드 호출, 객체 리턴, 매개변수로 해당 객체를 받는 것 등을 말하며 해당 객체의 참조를 계속 유지하지는 않는다.
+<br/><br/>
+<div style="width: 80%;" align="center">
+<img src="images/--10-Dependency2.png" style="width: 100%;">
+<span class="italic">[그림 8]&nbsp;Dependency Stereo Type</span>
+</div>
+<p>
+추가로 위와 같이 스테레오 타입으로 어떠한 목적의 Dependency인지 의미를 명확히 명시 할 수도 있는데 Dependency의 목적 또는 형태가 중요할 경우 사용할 수도 있을 것 같다.
+<br/>
+<span class="subtitle">- Association (연관), Directed Association(방향성 있는 연관)</span>
+<p>
+클래스 다이어그램에서의 Association은 일반적으로 어떤 클래스의 어떤 <mark>필드</mark>가 다른 클래스의 객체를 참조하여 사용 하는것을 말한다. 아래 클래스 다이어그램은 두 가지 형태의 Association을 나타내고 있다.
+<div style="width: 80%;" align="center">
+<img src="images/--11-Assocication.png" style="width: 100%;">
+<span class="italic">[그림 9]&nbsp;Assocication</span>
+</div>
+<p>
+첫 번째 다이어그램은 일반적인 Association으로 단지 실선 하나로 클래스를 연결하여 표기하고 두 번째 다이어그램은 Directed Association으로 클래스를 실선으로 연결 후 실선 끝에 화살표를 추가한다. Association과 Directed Association의 차이는 화살표가 의미하는 navigability(방향성)인데 이것에 따라 참조 하는 쪽과 참조 당하는 쪽을 구분한다. 두 번째 다이어그램은 User에서 Address 쪽으로 화살표가 있으므로 User가 Address를 참조하는 것을 의미한다. Navigability가 없는 Association은 명시되지 않은 것으로 User가 Address를 참조할 수도, Address가 User를 참조할 수도, 또는 둘 다일 수도 있는 것을 의미한다. 화살표 옆에 있는 –addresses는 roleName(역할명)을 나타내고 Address가 User 클래스에서 참조될 때 어떤 역할을 가지고 있는지를 의미한다.<span style="font-style: italic;">는 Multiplicity(개수)을 나타내는데 대상 클래스의 가질 수 있는 인스턴스 개수 범위를 의미한다. 0…1 과 같이 점으로 구분하여 앞에 값은 최소값, 뒤에 값은 최대값을 의미하는데 *은 0…</span>과 같은 의미로 객체가 없을 수도 있고 또는 수가 정해지지 않은 여러 개일 수도 있다는 것을 의미한다. 이전에는 Multiplicity가 아닌 Cardinality로 불렸는데 "특정 집합 또는 다른 그룹에 있는 요소의 수"라는 Cardinality의 사전적 의미가 실제 인스턴스의 수가 아닌 가질 수 있는 범위를 지정하는 클래스 다이어그램에서의 의미에 적합하지 않다는 이유로 바뀌었다.
+<p>
+세 번째의 다이어그램은 두 번째의 다이어그램과 비슷한 의미를 가지고 있지만 다른 형태인 속성 표기법으로 나타낸 것이다. 여기서 보는 바와 같이 roleName은 보통 클래스의 필드명이 된다. 속성 표기법이 두 번째 클래스 다이어그램과 조금 다른 점은 여러 개의 객체에 대한 Container(컨테이너)가 List라는 것까지 알려주고 있다.
+<p>
+그럼 두 번째와 세 번째의 다이어그램이 완전히 동일한 의미를 가지게 하려면 어떻게 해야 할까?
+<div style="width: 80%;" align="center">
+<img src="images/--12-Association-Class.png" style="width: 100%;">
+<span class="italic">[그림 10]&nbsp;Association Class</span>
+</div>
+<p>
+위와 같이 Association Class(연관클래스)를 사용하여 어떤 종류의 컨테이너 클래스가 사용되는지 까지 나타낼 수 있다. 하지만 사실 특이한 클래스도 아니고 자바에서 기본으로 제공되는 List를 저렇게 표기하는건 조금 귀찮은 일일 수 있을 것 같다. 그래서 스테레오 타입으로 표기할 수도 있다. 이로써 <span style="font-style: italic; color: gray;">[그림 9]&nbsp;Assocication</span> 의 세 번째 다이어그램의 속성 표기법으로 표현된 것과 모든 의미가 같아졌다. 보통은 클래스의 속성이 기본 제공 클래스가 아니거나 중요 또는 강조하고 싶을 때 Association 관계로 나타낸다. Association Class는 조금 다른 의미로도 사용될 수 있다. 예를 들어 학생과 수강과목 클래스가 Association 관계를 가지고 있는데 단순 Association 관계가 아니라 각 관계마다 해당 과목의 학점이라는 속성이 필요하다면 어떻게 나타낼 수 있을까? 이럴 때도 Association Class를 사용하여 나타낼 수 있다.
+<div style="width: 80%;" align="center">
+<img src="images/--13-Association-Class1.png" style="width: 100%;">
+<span class="italic">[그림 11]&nbsp;Association Class</span>
+</div>
+<p>
+물론 grade라는 값을 Subject 클래스 자체의 속성으로 할 수도 있지만 Subject의 속성이라기 보다는 Student와 Subject 사이의 관계에 대한 속성이라는 관점에서 위의 다이어그램처럼 Association Class로 나타낼 수 있다.
+<br/><br/>
+<div style="width: 80%;" align="center">
+<img src="images/--14-Association-Class-Vs-Association1.png" style="width: 100%;">
+<span class="italic">[그림 12]&nbsp;Association Class Vs Association</span>
+</div>
+<p>
+또한 [그림11]의 Association Class를 풀어서 위처럼 Association 관계만으로도 나타낼 수 있다. [그림11]은 Student와 Subject의 관계를 나타내고 싶은데 그 관계에 대한 속성값으로 Grade가 있는 것이고 [그림12]는 단순 3개 클래스를 Association 관계로 나타낸 것처럼 의미는 조금 다를 수 있으나 구현되는 코드는 같을 것이다.
+
+<div style="width: 80%;" align="center">
+<img src="images/--15-Association-Class-Code1.png" style="width: 100%;">
+<span class="italic">[그림 13]&nbsp;Association Class Code</span>
+</div>
+<p>
+<br/>
+<span class="subtitle">- Aggregation (Shared Aggregation, 집합)</span>
+<p>
+Aggregation은 Shared Aggregation이라고도 하며 Composition(Composite Aggregation)과 함께 Association 관계를 조금 더 특수하게 나타낸 것으로 whole(전체)와 part(부분)의 관계를 나타낸다. Association은 집합이라는 의미를 내포하고 있지 않지만 Aggregation은 집합이라는 의미를 가지고 있다.
+
+<div style="width: 80%;" align="center">
+<img src="images/--16-Aggregation.png" style="width: 100%;">
+<span class="italic">[그림 14]&nbsp;Aggregation</span>
+</div>
+<p>
+표기법은 위와 같이 whole과 part를 실선으로 연결 후 whole쪽에 비어있는 다이아몬드를 표기한다. Part쪽에는 화살표를 명시하여도 되고 명시하지 않아도 된다. Aggregation의 다이아몬드가 이미 navigability의 방향을 표현하고 있기 때문이다. 그런데 코드를 보시면 위에서 보았던 Association의 코드와 똑같다. Association과 Aggregation은 집합이라는 개념적인 차이는 있지만 코드에서는 이 차이를 구분하기 힘들다.
+<br/>
+Aggregation은 UML에서 집합이라는 개념 외에 명확한 Aggregation의 정의를 제공하지 않는다. 그래서 여러 프로그래머나 분석가, 설계사가 Aggregation 관계에 대해 자기 나름의 정의를 내렸기 때문에 혼란이 생겼고 Aggregation은 사용하지 않는 것이 좋다고 한다. 저도 이에 동의 하는 바이지만….. 아직도 논란이 되고 있는 부분이고 정확한 답을 내기는 어려울 것 같다.그리고 도서 “The Object Primer: Agile Model-Driven Development with UML 2.0(저자 Scott W. Ambler)”과 “UML 실전에서는 이것만 쓴다(저자 Robert C. Martin)”에 UML 2.0에서는 위의 문제 때문에 Aggregation이 제외 되었다는 말이 있다. 그래서 근거를 찾기 위해 이곳 저곳 찾아본 결과 처음엔 제외 되었다가 커뮤니티의 강력한 항의로 다시 들어왔다고 한다. 실제로도 UML 1.x 버전에 비해 2.x 버전에는 Aggregation에 대한 내용이 많이 사라지긴 했지만 몇 군데 남아 있는 걸 확인했다.
+
+<p>
+<br/>
+<span class="subtitle">- Composition (Composite Aggregation, 합성)</span>
+<p>
+Composition(또는 Composite Aggregation)도 Aggregation과 비슷하게 whole(전체)와 part(부분)의 집합 관계를 나타내지만 개념적으로 Aggregation보다 더 강한 집합을 의미한다.
+
+<div style="width: 80%;" align="center">
+<img src="images/--19-Composition1.png" style="width: 100%;">
+<span class="italic">[그림 15]&nbsp;Composition</span>
+</div>
+<p>
+Composition의 표기법 또한 위와 같이 Aggregation과 비슷하지만 다이아몬드의 내부가 채워져 있다는 점만 다르다. 그럼 Composition의 개념과 코드에서는 Aggregation과 어떤 차이가 있는지 보겠다. Composition은 Aggregation보다 강한 집합이라고 했다. 여기서 강한 집합이란 part가 whole에 종속적이어서 whole이 part를 소유하고 있다는 것이다. 즉, whole의 생성자내에서 part를 직접 만들어 쓴다. 반면 Aggregation은 part가 whole에 대해 독립적이다. 즉, whole의 생성자내에서 이미 생성되어진 part를 빌려다 쓰는 것이다.
+<br/>이러한 점이 Aggregation과는 다른점이다. 
+
+<div>
+- Composition의 첫 번째 특징은 whole 인스턴스가 part 인스턴스의 전체 수명을 책임진다는 것이다.
+<ol>
+<li>whole 인스턴스가 part 인스턴스를 생성</li>
+<li>whole 인스턴스가 소멸되면 part 인스턴스도 함께 소멸</li>
+<li>whole 인스턴스가 복사되면 part 인스턴스도 함께 복사</li>
+</ol>
+<br/>
+- Composition의 두 번째 특징은 part에 해당하는 인스턴스는 공유 될 수 없다는 것이다.
+<br/><br/>
+<div style="width: 80%;" align="center">
+<img src="images/--20-Shallow-Copy1.png" style="width: 100%;">
+<span class="italic">[그림 16]&nbsp;Shallow Copy</span>
+</div>
+<p>
+위의 예제는 클래스 다이어그램이 아닌 객체 다이어그램으로 [그림15]를 객체로 표현한 것이다. 참조변수 userA가 참조하고 있는 user 객체를 clone하여 clonedUser 객체를 만들고 참조변수 userB에서 참조하고 있다. user객체는 제대로 복사가 됐지만 user객체 안에서 참조하고 있는 address는 clonedUser 객체도 똑같이 참조하고 있다. 이것을 shallow copy(얕은 복사)라고 하며 이 경우에 part에 해당하는 address 객체가 공유 된 것이다. 또한 첫 번째 조건의 의미 중 whole 인스턴스가 복사되면 part인스턴스도 복사되어야 한다는 조건도 충족시키지 못했다.
+<br/><br/>
+<div style="width: 80%;" align="center">
+<img src="images/--21-Deep-Copy-Object-Diagram1.png" style="width: 100%;">
+<span class="italic">[그림 17]&nbsp;Deep Copy Object Diagram</span>
+</div>
+<p>
+위의 다이어그램에서는 user 객체가 복사되어 clonedUser 객체가 생성될 때 user 객체가 참조하여 가지고 있는 address 객체 또한 같이 복사 되어 clonedUser 객체는 새로운 clonedAddress 객체를 참조하여 가지고 있다.
+</div>
+
+<div style="width: 80%;" align="center">
+<img src="images/--22-Deep-Copy-Code1.png" style="width: 100%;">
+<span class="italic">[그림 18]&nbsp;Deep Copy Code</span>
+</div>
+<p>
+Aggregation 관계와 Composition 관계를 UML 툴에서 그린 후 Code Generation을 하면 똑같은 코드가 생성된다. 하지만 Composition에서는 개발자가 구현해야 할 부분이 몇 가지 있다. 위에서 본 part에 해당하는 인스턴스가 공유되지 않게 하기 위한 Deep Copy 구현과 part를 가지는 whole 인스턴스가 part 인스턴스의 수명 전체를 책임져야 한다는 것에 따라 whole 클래스의 생성자 또는 기타 메소드 내에서 part 인스턴스를 생성해야 하고 외부에서 part 객체를 생성하지 못하도록 whole 클래스에는 part 인스턴스에 대한 setter가 있으면 안된다. 다른 언어에서는 생명주기와 관련된 다른 추가적인 것도 있겠지만 자바에서의 객체 소멸은 Garbage Collector가 수행하므로 part 인스턴스의 소멸은 신경쓰지 않아도 된다.
+<br/>
+<div>
+<mark>참조사이트</mark><br/>
+<a href="http://www.nextree.co.kr/p6753/">www.nextree.co.kr/p6753/</a>
+</div>
+
+</div>
+</body>
+</html>
